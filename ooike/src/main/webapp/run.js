@@ -48,8 +48,10 @@ function moveBike(){
 	updateBikeImage();
 	
 	// 次のフレームを要求
-	requestAnimationFrame(moveBike);
-	
-	
+	requestAnimationFrame(moveBike);	
 }
 
+
+
+
+moveBike(); //アニメーション開始
