@@ -10,6 +10,14 @@
 </head>
 <body>
 	<img src="./images/login_page/bike.png" id="bike" alt="bike">
+	<div id="passwordForm">
 	
+	</div>
+	
+	<script src="./js/run.js"></script>
+	<!-- エラーメッセージの表示 -->
+	<% if (request.getattribute("error") != null) {
+		<p style="color:red;"> <%= request.getAttribute("error") %>
+	<% } %>
 </body>
 </html>
