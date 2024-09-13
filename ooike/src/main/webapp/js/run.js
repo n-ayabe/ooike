@@ -72,7 +72,11 @@ function updateBikeImage() {
 	}
 }
 
-
+bike.addEventListener("contextmenu", function(event){
+	event.preventDefault(); // 右クリック無効
+	isAnimating = false; // アニメーション停止
+	passwordForm.style.display = "block"; フォーム表示
+})
 
 
 
