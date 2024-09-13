@@ -51,6 +51,19 @@ function moveBike(){
 	requestAnimationFrame(moveBike);	
 }
 
+function toggleSpeed() {
+	// 速度切り替え
+	if (isFast) {
+		speedX = minSpeed * (speedX < 0 ? -1 : 1);
+		speedY = minSpeed * (speedY < 0 ? -1 : 1);
+	} else {
+		speedX = maxSpeed * (speedX < 0 ? -1 : 1);
+		speedY = maxSpeed * (speedY < 0 ? -1 : 1);
+	}
+	isFast = ! isFast; // 状態反転
+}
+
+
 
 
 
