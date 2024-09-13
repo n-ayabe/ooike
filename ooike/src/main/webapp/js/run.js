@@ -1,3 +1,5 @@
+// script.js
+
 const bike = document.getElementById("bike");
 const passwordForm = document.getElementById("passwordForm");
 const cancelButton = document.getElementById("cancelButton");
@@ -12,8 +14,8 @@ let speedY = minSpeed * (Math.random() < 0.5 ? 1 : -1);
 let isFast = false;
 let isAnimating = true;
 
-function moveBike(){
-	if (!isAnimating) return; //アニメーションが停止の場合は処理を中断
+function moveBike() {
+	if (!isAnimating) return; // アニメーションが停止の場合は処理を中断
 	
 	x += speedX;
 	y += speedY;
@@ -76,12 +78,12 @@ bike.addEventListener("contextmenu", function(event){
 	event.preventDefault(); // 右クリック無効
 	isAnimating = false; // アニメーション停止
 	passwordForm.style.display = "block"; フォーム表示
-})
+});
 
 cancelButton.addEventListener("click", function() {
 	passwordForm.style.display = "none"; // フォーム非表示
 	isAnimating = true; アニメーション再開
 	moveBike(); // アニメーション再開
-})
+});
 
 moveBike(); //アニメーション開始
