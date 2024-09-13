@@ -42,7 +42,7 @@
 </head>
 
 <body>
-	<img src="./images/bike.png" id="bike" alt="bike">
+	<img src="./images/BOOK.jpg" id="bike" alt="bike">
 	<div id="passwordForm">
 		<form id="form" action="./login" method="POST">
 			<input type="text" name="userId placeholder="ユーザー名" required><br>
