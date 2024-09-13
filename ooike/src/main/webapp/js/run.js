@@ -63,6 +63,15 @@ function toggleSpeed() {
 	isFast = ! isFast; // 状態反転
 }
 
+function updateBikeImage() {
+	// 画像切り替え
+	if (isFast) {
+		bike.src = "book.png";
+	} else {
+		bike.src = "book.png";
+	}
+}
+
 
 
 
