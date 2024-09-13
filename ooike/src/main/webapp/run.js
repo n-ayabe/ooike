@@ -12,4 +12,44 @@ let speedY = minSpeed * (Math.random() < 0.5 ? 1 : -1);
 let isFast = false;
 let isAnimating = true;
 
+function moveBike(){
+	if (!isAnimating) return; //アニメーションが停止の場合は処理を中断
+	
+	x += speedX;
+	y += speedY;
+	
+	// 画面端部での処理
+	if (x + bike.clientWidth > window.innerWidth) {
+		x = window.innerWidth - bike.clientWidth;
+		speedX = -Math.abs(speedX); // 反転
+		toggleSpeed(); // 速度切り替え
+	}
+	if (x < 0) {
+		x = 0;
+		speedX = Math.abs(speedX); // 反転
+		toggleSpeed(); // 速度切り替え
+	}
+	if ( y + bike.clientHeight > window.innerHeight) {
+		y = window.innerHeight - bike.clientHeight;
+		speedY = -Math.abs(speedY); // 反転
+		toggleSpeed(); // 速度切り替え
+	}
+	if (y < 0) {
+		y = 0;
+		speedY = Math.abs(speedY); //　反転
+		toggleSpeed(); // 速度切り替え
+	}
+
+	// 画像の位置を更新
+	bike.style.left = x + "px";
+	bike.style.top = y + "px";
+
+	// 画像の更新
+	updateBikeImage();
+	
+	// 次のフレームを要求
+	requestAnimationFrame(moveBike);
+	
+	
+}
 
