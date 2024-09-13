@@ -78,6 +78,10 @@ bike.addEventListener("contextmenu", function(event){
 	passwordForm.style.display = "block"; フォーム表示
 })
 
-
+cancelButton.addEventListener("click", function() {
+	passwordForm.style.display = "none"; // フォーム非表示
+	isAnimating = true; アニメーション再開
+	moveBike(); // アニメーション再開
+})
 
 moveBike(); //アニメーション開始
