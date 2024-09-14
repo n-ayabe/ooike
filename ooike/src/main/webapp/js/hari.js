@@ -16,7 +16,7 @@ let isFast = false;
 let isAnimating = true; // アニメーションの状態管理
 
 // 回転管理用の変数
-let angle = 0;
+let angle = -10;
 let rotatingClockwise = true;
 
 function moveBike() {
@@ -73,7 +73,7 @@ function toggleSpeed() {
 
 function updateBikeImage() {
     // 画像の切り替え
-    const newSrc = isFast ? "./images/ログイン画面/hari_r.jpg" : "./images/ログイン画面/hari_l.jpg";
+    const newSrc = isFast ? "./images/ログイン画面/hari_r.png" : "./images/ログイン画面/hari_l.png";
     const img = new Image();
     img.src = newSrc;
     img.onload = function() {
@@ -98,9 +98,9 @@ cancelButton.addEventListener("click", function() {
 
 function rotateImage() {
     if (rotatingClockwise) {
-        angle += 10; // 時計回りに10度回転
+        angle += 20; // 時計回りに10度回転
     } else {
-        angle -= 10; // 逆回転に10度回転
+        angle -= 20; // 逆回転に10度回転
     }
 
     bike.style.transform = `rotate(${angle}deg)`;
