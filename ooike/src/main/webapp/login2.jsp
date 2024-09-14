@@ -48,7 +48,7 @@
         </form>
     </div>
 
-    <script src="./js/run.js"></script>
+    <script src="./js/run2.js"></script>
     <!-- エラーメッセージの表示 -->
     <% if (request.getAttribute("error") != null) { %>
         <p style="color:red;"><%= request.getAttribute("error") %></p>
