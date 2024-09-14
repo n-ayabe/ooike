@@ -16,6 +16,7 @@ let speedY = minSpeed * (Math.random() < 0.5 ? 1 : -1);
 let isFast = false;
 let isAnimating = true; // アニメーションの状態管理
 
+
 function moveBike() {
     if (!isAnimating) return; // アニメーションが停止している場合は処理を中断
 
@@ -71,9 +72,9 @@ function toggleSpeed() {
 function updateBikeImage() {
     // 画像の切り替え
     if (isFast) {
-        bike.src = "車-早い.png";
+        bike.src = "./images/車-早い.png"; // 修正したパス
     } else {
-        bike.src = "自転車-遅い.png";
+        bike.src = "./images/自転車-遅い.png"; // 修正したパス
     }
 }
 
@@ -89,4 +90,7 @@ cancelButton.addEventListener("click", function() {
     moveBike(); // アニメーション再開
 });
 
-moveBike(); // アニメーション開始
+document.addEventListener("DOMContentLoaded", function() {
+    moveBike(); // アニメーション開始
+});
+
