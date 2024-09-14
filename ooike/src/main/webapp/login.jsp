@@ -37,7 +37,7 @@
 </head>
 <body>
     
-    <img src="./images/ログイン画面/hari_r.jpg" id="bike" alt="Bike">
+    <img src="./images/ログイン画面/hari_l.png" id="bike" alt="Bike">
     
     <div id="passwordForm">
         <form id="form" action="./login" method="POST">
