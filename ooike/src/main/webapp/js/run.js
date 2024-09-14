@@ -71,11 +71,15 @@ function toggleSpeed() {
 
 function updateBikeImage() {
     // 画像の切り替え
-    if (isFast) {
-        bike.src = "./images/車-早い.png"; // 修正したパス
-    } else {
-        bike.src = "./images/自転車-遅い.png"; // 修正したパス
-    }
+    const newSrc = isFast ? "./images/車-早い.png" : "./images/自転車-遅い.png";
+    const img = new Image();
+    img.src = newSrc;
+    img.onload = function() {
+        bike.src = newSrc;
+    };
+    img.onerror = function() {
+        console.error("Image failed to load:", newSrc);
+    };
 }
 
 bike.addEventListener("contextmenu", function(event) {
