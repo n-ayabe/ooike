@@ -37,7 +37,7 @@
 </head>
 <body>
     
-    <img src="./images/ログイン画面/hari_r.png" id="bike" alt="Bike">
+    <img src="./images/ログイン画面/自転車-遅い1.png" id="bike" alt="Bike">
     
     <div id="passwordForm">
         <form id="form" action="./login" method="POST">
@@ -48,7 +48,7 @@
         </form>
     </div>
 
-    <script src="./js/run.js"></script>
+    <script src="./js/hari.js"></script>
     <!-- エラーメッセージの表示 -->
     <% if (request.getAttribute("error") != null) { %>
         <p style="color:red;"><%= request.getAttribute("error") %></p>
