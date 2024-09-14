@@ -71,7 +71,7 @@ function toggleSpeed() {
 
 function updateBikeImage() {
     // 画像の切り替え
-    const newSrc = isFast ? "./images/ログイン画面/hari_r.png" : "./images/ログイン画面/自転車-遅い.png";
+    const newSrc = isFast ? "./images/ログイン画面/hari_r.png" : "./images/ログイン画面/hari_l.png";
     const img = new Image();
     img.src = newSrc;
     img.onload = function() {
