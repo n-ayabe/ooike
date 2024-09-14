@@ -1,8 +1,7 @@
-// script.js
-
 const bike = document.getElementById("bike");
 const passwordForm = document.getElementById("passwordForm");
 const cancelButton = document.getElementById("cancelButton");
+
 let x = 0;
 let y = 0;
 const minSpeed = 2; // 一番遅い速度
@@ -16,6 +15,9 @@ let speedY = minSpeed * (Math.random() < 0.5 ? 1 : -1);
 let isFast = false;
 let isAnimating = true; // アニメーションの状態管理
 
+// 回転管理用の変数
+let angle = 0;
+let rotatingClockwise = true;
 
 function moveBike() {
     if (!isAnimating) return; // アニメーションが停止している場合は処理を中断
@@ -94,7 +96,22 @@ cancelButton.addEventListener("click", function() {
     moveBike(); // アニメーション再開
 });
 
+function rotateImage() {
+    if (rotatingClockwise) {
+        angle += 10; // 時計回りに10度回転
+    } else {
+        angle -= 10; // 逆回転に10度回転
+    }
+
+    bike.style.transform = `rotate(${angle}deg)`;
+
+    // 次の回転方向を決定
+    rotatingClockwise = !rotatingClockwise;
+}
+
+// 0.2秒ごとに回転させる
+setInterval(rotateImage, 200);
+
 document.addEventListener("DOMContentLoaded", function() {
     moveBike(); // アニメーション開始
 });
-
